@@ -1,0 +1,2 @@
+const GO_TO = 'GO_TO';
+const GET_SCHEDULE = 'GET_SCHEDULE';
