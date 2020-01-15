@@ -1,20 +1,19 @@
 import React, {useState} from 'react';
 import Options from './Options';
+import '../App.css';
 
-function ChooseLanguage(hasClicked) {  
+function ChooseLanguage({store}, hasClicked) {  
     const [isClicked, setIsClicked] = useState(false);
 
     function hasClicked() {
         setIsClicked(true);
-        //console.log('Working');
-        store.dispatch(goTo('Options'))
     }
     
     if(!isClicked) {
         return (
-            <div>
-                <button onClick={() => hasClicked()}>Russian</button>
-                <button onClick={() => hasClicked()}>English</button>
+            <div className="choose-lang-container">
+                <button onClick={() => hasClicked()} className="btn">Russian</button>
+                <button onClick={() => hasClicked()} className="btn">English</button>
             </div>
         )
     } else {

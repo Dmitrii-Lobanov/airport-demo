@@ -1,10 +1,9 @@
-import {GO_TO} from '../actions/actionTypes';
-import actions from '../actions/actions'
+import {MOVE_TO} from '../actions/actionTypes';
 
 export const ui = (state = {}, action) => {
     switch(action.type){
-        case GO_TO:
-            return actions.goTo;
+        case MOVE_TO:
+            return state;
         default:
             return state;
     }

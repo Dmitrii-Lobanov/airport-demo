@@ -1,12 +1,34 @@
-import actionTypes from '../actions/actionTypes';
+import { MOVE_TO, 
+        ScheduleFilters, 
+        SET_SCHEDULE_FILTER, 
+        GET_DATA } 
+    from '../actions/actionTypes';
 
-const goTo = component => (
+const moveTo = component => (
     {
-        type: actionTypes.GO_TO,
-        component
+        type: MOVE_TO,
+        payload: component
     }
 )
 
+const getData = data => (
+    {
+        type: GET_DATA,
+        data
+    }
+)
+
+const setScheduleFilter = filter => (
+    {
+        type: SET_SCHEDULE_FILTER,
+        filter
+    }
+)
+
+
+
 export default {
-    goTo
+    moveTo,
+    getData,
+    setScheduleFilter
 }

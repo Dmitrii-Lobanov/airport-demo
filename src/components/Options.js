@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import FlightSchedule from './FlightSchedule';
 import ScanTicket from './ScanTicket';
 import Maps from './Maps';
 import Services from './Services';
+import FlightScheduleContainer from '../containers/FlightScheduleContainer';
+import '../App.css';
 
 function Options() {
     const [isScheduleClicked, setIsScheduleClicked] = useState(false);
@@ -28,7 +29,7 @@ function Options() {
 
     if(isScheduleClicked) {
         return (
-            <FlightSchedule />
+            <FlightScheduleContainer />
         );
         
     } else if(isScanClicked) {
@@ -46,11 +47,12 @@ function Options() {
     } else {
         return (
             <div>
-                <h1>
-                    Demo International Airport
-                    </h1>
-                <button>Language choosing div</button>
-                <div>
+                <div className="header">
+                    <div></div>
+                    <h1>Demo International Airport</h1>
+                    <button>Lang</button>
+                </div>
+                <div className="options-container">
                     <button onClick={() => hasScheduleClicked()}>Flight Schedule</button>
                     <button onClick={() => hasScanClicked()}>Scan your ticket</button>
                     <button onClick={() => hasMapsClicked()}>Maps</button>

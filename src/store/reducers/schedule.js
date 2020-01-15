@@ -1,13 +1,19 @@
-import {GET_SCHEDULE} from '../actions/actionTypes';
-import actions from '../actions/actions'
+import { SET_SCHEDULE_FILTER,  
+        GET_DATA } 
+    from '../actions/actionTypes';
+import data from '../../data/data.json';
 
-export const schedule = (state = {}, action) => {
+//const data = 'Hi';
+
+export const displaySchedule = (state = data, action) => {
     switch(action.type){
-        case GET_SCHEDULE:
-            return [...state];
+        case GET_DATA:
+            return state;
+        case SET_SCHEDULE_FILTER:
+            return action.filter;
         default:
             return state;
     }
 };
 
-export default schedule;
+export default displaySchedule;

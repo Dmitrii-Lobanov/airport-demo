@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Options from './Options';
+import '../App.css';
 
 function ScanTicket() {
     const [isBackClicked, setIsBackClicked] = useState(false);
@@ -11,13 +12,13 @@ function ScanTicket() {
     if(!isBackClicked) {
         return (
             <div>
-                <div>
-                    <button onClick={() => hasBackClicked()}>Back</button>
+                <div className="header">
+                    <button onClick={() => hasBackClicked()} className="btn-back">Back</button>
                     <h1>Demo International Airport</h1>
-                    <div>Language choosing div</div>
+                    <button>Lang</button>
                 </div>
                 <div>
-                    <p>Scan your ticket</p>
+                    <p className="content">Scan your ticket</p>
                 </div>
             </div>
        )    
